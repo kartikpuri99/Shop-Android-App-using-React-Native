@@ -1,3 +1,4 @@
+import { BASE_URL, API_KEY } from "../../keys";
 import Order from "../../models/order";
 
 export const ADD_ORDER = "ADD_ORDER";
@@ -8,9 +9,7 @@ export const fetchOrders = () => {
     const userId = getState().auth.userId;
 
     try {
-      const response = await fetch(
-        `${process.env.BASE_URL}orders/${userId}.json`
-      );
+      const response = await fetch(BASE_URL + `orders/${userId}.json`);
       if (!response.ok) {
         throw new Error("Something went wrong");
       }
@@ -40,7 +39,7 @@ export const addOrder = (cartItems, totalAmount) => {
     const userId = getState().auth.userId;
     const date = new Date();
     const response = await fetch(
-      `${process.env.BASE_URL}orders/${userId}.json?auth=${token}`,
+      BASE_URL + `orders/${userId}.json?auth=${token}`,
       {
         method: "POST",
         headers: {
