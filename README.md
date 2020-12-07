@@ -13,9 +13,9 @@ It uses firebase for storage as well as authentication.
 # How to run the file
 1. clone the github repo on your local desktop.
 2. Run `expo i` in the root folder.
-3. In the root folder inside the config folder create a file named `.env` and add the following code:
-```
-API_KEY=//Your API KEY OF FIREBASE
-BASE_URL=//BASE URL OF FIREBASE ENDPOINT
+3. In the root folder create a file named `keys.js` and add the following code:
+```javascript
+export const API_KEY="//Your API KEY OF FIREBASE"
+export const BASE_URL="//BASE URL OF FIREBASE ENDPOINT"
 ```
 5. Now open the terminal in root folder and run `expo start` to start the app on your android emulator aur your mobile phone.
